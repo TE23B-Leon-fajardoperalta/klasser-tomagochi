@@ -13,10 +13,7 @@ public class Tamagochi
     {
         hunger -= 2;
 
-        if (hunger > 0)
-        {
-            hunger = 0;
-        }
+        Console.Clear();
     }
     public void Hi()
     {
@@ -25,6 +22,7 @@ public class Tamagochi
         {
             name = Console.ReadLine();
         }
+        Console.Clear();
     }
     public void Teach()
     {
@@ -36,12 +34,21 @@ public class Tamagochi
         }
         boredom -= 2;
         words ++;
+        Console.Clear();
     }
     public void Tick()
     {
         Console.WriteLine("tick");
-        hunger ++;
-        boredom ++;
+        hunger++;
+        boredom++;
+        if (boredom < 0)
+        {
+            boredom = 0;
+        }
+        if (hunger < 0)
+        {
+            hunger = 0;
+        }
     }
     public void Printstats()
     {
